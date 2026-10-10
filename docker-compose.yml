@@ -1,0 +1,37 @@
+# Caddy reverse proxy for direct (non-Cloudflare-Tunnel) HTTPS access.
+# Currently serves: freshrss.njcq.dpdns.org -> FreshRSS container.
+#
+# Rollback plan: the Cloudflare Tunnel ingress is left untouched.
+# To roll back, toggle the DNS record back to "Proxied" (orange cloud)
+# in Cloudflare; traffic flows through the tunnel again within a minute.
+# This stack can then be stopped/removed.
+#
+# Network: joins the shared external `rsshub-net` (same exception already
+# granted for freshrss/rsshub) so Caddy can reach freshrss via Docker DNS.
+# No new Docker networks are created.
+services:
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+      - rsshub-net
+
+networks:
+  rsshub-net:
+    external: true
+
+volumes:
+  caddy_data:
+    name: caddy_data
+  caddy_config:
+    name: caddy_config
