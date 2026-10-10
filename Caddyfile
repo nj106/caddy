@@ -1,0 +1,11 @@
+{
+	# Persist certs/OCSP in the mounted /data volume so container
+	# recreations (e.g. watchtower updates) don't re-issue every time.
+	storage file_system {
+		root /data
+	}
+}
+
+freshrss.njcq.dpdns.org {
+	reverse_proxy freshrss:80
+}
