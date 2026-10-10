@@ -1,6 +1,9 @@
 # Caddy reverse proxy for direct (non-Cloudflare-Tunnel) HTTPS access.
 # Currently serves: freshrss.njcq.dpdns.org -> FreshRSS container.
 #
+# Uses `caddy reverse-proxy` (auto-HTTPS, no Caddyfile needed).
+# Certs persist in caddy_data via XDG_DATA_HOME.
+#
 # Rollback plan: the Cloudflare Tunnel ingress is left untouched.
 # To roll back, toggle the DNS record back to "Proxied" (orange cloud)
 # in Cloudflare; traffic flows through the tunnel again within a minute.
@@ -13,6 +16,9 @@ services:
   caddy:
     image: caddy:2
     container_name: caddy
+    command: reverse-proxy --from freshrss.njcq.dpdns.org --to freshrss:80
+    environment:
+      XDG_DATA_HOME: /data
     labels:
       - com.centurylinklabs.watchtower.enable=true
     restart: unless-stopped
@@ -21,8 +27,6 @@ services:
       - "443:443"
     volumes:
       - caddy_data:/data
-      - caddy_config:/config
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - rsshub-net
 
@@ -33,5 +37,3 @@ networks:
 volumes:
   caddy_data:
     name: caddy_data
-  caddy_config:
-    name: caddy_config
