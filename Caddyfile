@@ -1,11 +1,38 @@
 {
-	# Persist certs/OCSP in the mounted /data volume so container
-	# recreations (e.g. watchtower updates) don't re-issue every time.
+	# Persist certs in the mounted /data volume so container recreations
+	# (e.g. watchtower updates) don't trigger re-issuance every time.
 	storage file_system {
 		root /data
 	}
 }
 
+# Host-mode container: 127.0.0.1 is the VPS itself, ports are the
+# services' published host ports.
+
 freshrss.njcq.dpdns.org {
-	reverse_proxy freshrss:80
+	reverse_proxy 127.0.0.1:8081
+}
+
+termix.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8082
+}
+
+floorplan.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8093
+}
+
+bark.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8084
+}
+
+octopus.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8085
+}
+
+tripstar.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:7860
+}
+
+portainer.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:9000
 }
