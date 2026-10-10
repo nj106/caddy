@@ -36,3 +36,11 @@ tripstar.njcq.dpdns.org {
 portainer.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:9000
 }
+
+vw.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8083
+}
+
+daidaipanel.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:5700
+}
