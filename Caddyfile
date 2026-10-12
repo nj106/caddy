@@ -29,10 +29,6 @@ octopus.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8085
 }
 
-tripstar.njcq.dpdns.org {
-	reverse_proxy 127.0.0.1:7860
-}
-
 portainer.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:9000
 }
