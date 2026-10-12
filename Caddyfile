@@ -40,3 +40,7 @@ vw.njcq.dpdns.org {
 daidaipanel.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:5700
 }
+
+resume.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8086
+}
