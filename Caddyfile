@@ -10,6 +10,7 @@
 # services' published host ports.
 
 freshrss.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8081
 }
 
@@ -19,10 +20,12 @@ termix.njcq.dpdns.org {
 }
 
 floorplan.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8093
 }
 
 bark.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8084
 }
 
@@ -31,22 +34,27 @@ octopus.njcq.dpdns.org {
 }
 
 portainer.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:9000
 }
 
 vw.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8083
 }
 
 daidaipanel.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:5700
 }
 
 resume.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8086
 }
 
 oci.njcq.dpdns.org {
+	encode zstd gzip
 	handle_path /myvnc/* {
 		reverse_proxy 127.0.0.1:6080
 	}
@@ -56,5 +64,6 @@ oci.njcq.dpdns.org {
 }
 
 beszel.njcq.dpdns.org {
+	encode zstd gzip
 	reverse_proxy 127.0.0.1:8090
 }
