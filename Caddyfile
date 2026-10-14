@@ -33,11 +33,6 @@ octopus.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8085
 }
 
-portainer.njcq.dpdns.org {
-	encode zstd gzip
-	reverse_proxy 127.0.0.1:9000
-}
-
 vw.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:8083
