@@ -62,3 +62,8 @@ beszel.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:8090
 }
+
+portainer.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:9000
+}
