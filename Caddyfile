@@ -44,3 +44,12 @@ daidaipanel.njcq.dpdns.org {
 resume.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8086
 }
+
+oci.njcq.dpdns.org {
+	handle_path /myvnc/* {
+		reverse_proxy 127.0.0.1:6080
+	}
+	handle {
+		reverse_proxy 127.0.0.1:8818
+	}
+}
