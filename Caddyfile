@@ -11,6 +11,7 @@
 
 freshrss.njcq.dpdns.org {
 	encode zstd gzip
+	reverse_proxy /imgc/* 127.0.0.1:8087
 	reverse_proxy 127.0.0.1:8081
 }
 
