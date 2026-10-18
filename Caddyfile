@@ -79,3 +79,8 @@ livesync.njcq.dpdns.org {
 		flush_interval -1
 	}
 }
+
+tgdl.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8094
+}
