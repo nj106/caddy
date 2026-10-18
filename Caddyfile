@@ -17,8 +17,12 @@ freshrss.njcq.dpdns.org {
 
 img.njcq.dpdns.org {
 	encode zstd gzip
-	reverse_proxy /imgc/* 127.0.0.1:8087
-	respond 404
+	handle /imgc/* {
+		reverse_proxy 127.0.0.1:8087
+	}
+	handle {
+		respond 404
+	}
 }
 
 termix.njcq.dpdns.org {
