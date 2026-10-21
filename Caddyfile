@@ -19,11 +19,6 @@ termix.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8082
 }
 
-tripstar.njcq.dpdns.org {
-	encode zstd gzip
-	reverse_proxy 127.0.0.1:7860
-}
-
 floorplan.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:8093
