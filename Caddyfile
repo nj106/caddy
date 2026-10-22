@@ -70,3 +70,9 @@ livesync.njcq.dpdns.org {
 		flush_interval -1
 	}
 }
+
+# ncmm 网易云音乐任务管理 (stack 128)
+ncmm.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3899
+}
