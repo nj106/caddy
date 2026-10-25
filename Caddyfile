@@ -71,3 +71,9 @@ ncmm.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:3899
 }
+
+# mirobody 健康数据引擎 (stack 131)
+mirobody.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:18060
+}
