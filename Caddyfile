@@ -77,9 +77,3 @@ mirobody.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:18060
 }
-
-# n8n 工作流自动化 (stack 139)
-n8n.njcq.dpdns.org {
-	encode zstd gzip
-	reverse_proxy 127.0.0.1:5678
-}
