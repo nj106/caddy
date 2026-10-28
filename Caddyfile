@@ -77,3 +77,9 @@ mirobody.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:18060
 }
+# ebook-to-mindmap (Portainer stack, 8095)
+ebook.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8095
+}
+
