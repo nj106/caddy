@@ -83,3 +83,10 @@ ebook.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8095
 }
 
+# obsidian-mcp 知识库 MCP 标准门 (stack 142); no encode, flush for SSE streams; bearer token enforced by the gateway itself
+obsidian-mcp.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:8096 {
+		flush_interval -1
+	}
+}
+
