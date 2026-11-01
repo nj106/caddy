@@ -90,3 +90,10 @@ obsidian-mcp.njcq.dpdns.org {
 	}
 }
 
+# hermes-agent 面板 (stack 143); no encode, flush for SSE/streaming; basic-auth enforced by Hermes itself
+hermes.njcq.dpdns.org {
+	reverse_proxy 127.0.0.1:9119 {
+		flush_interval -1
+	}
+}
+
