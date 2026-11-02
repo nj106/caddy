@@ -97,3 +97,8 @@ hermes.njcq.dpdns.org {
 	}
 }
 
+# Sub-Store 订阅管理 (stack 145, 127.0.0.1:3001); backend under secret path
+sub.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3001
+}
