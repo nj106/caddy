@@ -109,3 +109,10 @@ protocol.njcq.dpdns.org {
 		header_up Host protocol-explorer-alpha.vercel.app
 	}
 }
+
+# Electronics 101 外站反代 (原站 electronics-101-six.vercel.app, *.vercel.app 被墙)
+electronics.njcq.dpdns.org {
+	reverse_proxy https://electronics-101-six.vercel.app {
+		header_up Host electronics-101-six.vercel.app
+	}
+}
