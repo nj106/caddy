@@ -102,3 +102,10 @@ sub.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:3001
 }
+
+# Protocol Explorer 外站反代 (原站 protocol-explorer-alpha.vercel.app, *.vercel.app 被墙)
+protocol.njcq.dpdns.org {
+	reverse_proxy https://protocol-explorer-alpha.vercel.app {
+		header_up Host protocol-explorer-alpha.vercel.app
+	}
+}
