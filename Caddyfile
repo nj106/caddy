@@ -122,9 +122,3 @@ perk.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:8097
 }
-
-# FeedCraft RSS 中间件 (stack 147)
-feedcraft.njcq.dpdns.org {
-	encode zstd gzip
-	reverse_proxy 127.0.0.1:8098
-}
