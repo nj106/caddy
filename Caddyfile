@@ -116,9 +116,3 @@ electronics.njcq.dpdns.org {
 		header_up Host electronics-101-six.vercel.app
 	}
 }
-
-# PerkRadar 优惠线索看板 (stack 146)
-perk.njcq.dpdns.org {
-	encode zstd gzip
-	reverse_proxy 127.0.0.1:8097
-}
