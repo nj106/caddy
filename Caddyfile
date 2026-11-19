@@ -111,9 +111,3 @@ electronics.njcq.dpdns.org {
 	}
 }
 
-# noVNC Firefox (jlesage/firefox, Portainer stack 193); flush for VNC WebSocket stream
-firefox.njcq.dpdns.org {
-	reverse_proxy 127.0.0.1:5800 {
-		flush_interval -1
-	}
-}
