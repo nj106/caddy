@@ -39,16 +39,6 @@ daidaipanel.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:5700
 }
 
-oci.njcq.dpdns.org {
-	encode zstd gzip
-	handle_path /myvnc/* {
-		reverse_proxy 127.0.0.1:6080
-	}
-	handle {
-		reverse_proxy 127.0.0.1:8818
-	}
-}
-
 beszel.njcq.dpdns.org {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:8090
