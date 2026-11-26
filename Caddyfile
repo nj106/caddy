@@ -73,6 +73,12 @@ ebook.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8095
 }
 
+# jiangshan-map 中国历史交互地图 (Portainer stack, 8008)
+jiangshan.njcq.dpdns.org {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:8008
+}
+
 # obsidian-mcp 知识库 MCP 标准门 (stack 142); no encode, flush for SSE streams; bearer token enforced by the gateway itself
 obsidian-mcp.njcq.dpdns.org {
 	reverse_proxy 127.0.0.1:8096 {
